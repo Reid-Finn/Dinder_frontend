@@ -1,5 +1,6 @@
-import React from 'react'
-import Header from './Header'
+import React from 'react';
+import Header from './Header';
+import DinderCards from './DinderCards';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
@@ -16,6 +17,9 @@ function App() {
       {/* Buttons below Dinder Cards */}
         </Route>
         <Route path='/'>
+        </Route>
+        <Route path='/swipe'>
+          <DinderCards />
         </Route>
       </Router>
     </div>
