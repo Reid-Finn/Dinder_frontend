@@ -6,8 +6,8 @@ function App() {
   console.log("hello")
   return (
     <div className="App">
-      <h1> Hello test!</h1>
-
+      <h1> Dinder!</h1>
+      <h3>Swipe to find dinner!</h3>
       {/* Header */}
       <Header />
       {/* Dinder Cards */}
