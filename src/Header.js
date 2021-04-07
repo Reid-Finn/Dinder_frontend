@@ -9,11 +9,11 @@ import IconButton from '@material-ui/core/IconButton';
     return (
         <div className="header">
             <IconButton>
-            <HomeIcon fontSize='large' />
+                <HomeIcon fontSize='large' />
             </IconButton>
             <img fontSize='large' className='header_logo' src='https://files.slack.com/files-pri/T02MD9XTF-F01SZLU3YCX/image.png' alt=''></img>
             <IconButton>
-            <ChatIcon fontSize='large' />
+                <ChatIcon fontSize='large' />
             </IconButton>
         </div>
     )
