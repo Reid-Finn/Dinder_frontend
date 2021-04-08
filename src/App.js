@@ -3,6 +3,7 @@ import Header from './Header';
 import DinderCards from './DinderCards';
 import HomePage from './HomePage';
 import Restaurants from './Restaurants';
+import SignIn from './SignIn';
 import './App.css';
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
@@ -15,6 +16,7 @@ function App() {
       <Header />
       <Switch>
         <Route path='/' exact component={HomePage} />
+        <Route path='/signin' component={SignIn} />
         <Route path='/swipe' component={DinderCards} />
       </Switch>
     </div>
