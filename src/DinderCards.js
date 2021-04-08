@@ -5,7 +5,11 @@ import InfoIcon from '@material-ui/icons/Info';
 import ArrowLeft from '@material-ui/icons/ArrowBack';
 import ArrowRight from '@material-ui/icons/ArrowForward';
 
+
+
+
 function DinderCards() {
+     
     const [restaurant, setRestaurant] = useState([
         {
             name: 'Applebees',
@@ -18,7 +22,7 @@ function DinderCards() {
     ]);
     return (
         <div>
-            <h1>DinderCards working!</h1>
+            <h1>Swipe Right if you would like to have dinner here. Swipe left if not.</h1>
             <div className="DinderCards_cardContainer">
                 {restaurant.map(restaurant => (
                     <TinderCard

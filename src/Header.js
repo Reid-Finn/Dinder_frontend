@@ -3,6 +3,8 @@ import './Header.css';
 import HomeIcon from '@material-ui/icons/Home';
 import ChatIcon from '@material-ui/icons/Chat';
 import IconButton from '@material-ui/core/IconButton';
+import DinderPic from './dinderPic.png';
+
 
 
  function Header() {
@@ -11,7 +13,7 @@ import IconButton from '@material-ui/core/IconButton';
             <IconButton>
                 <HomeIcon fontSize='large' />
             </IconButton>
-            <img fontSize='large' className='header_logo' src='https://files.slack.com/files-pri/T02MD9XTF-F01SZLU3YCX/image.png' alt=''></img>
+            <img fontSize='large' className='header_logo' src={DinderPic} alt=''></img>
             <IconButton>
                 <ChatIcon fontSize='large' />
             </IconButton>

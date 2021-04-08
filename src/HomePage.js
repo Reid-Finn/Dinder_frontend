@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
+import DinderPic from './dinderPic.png';
 
 function HomePage() {
     return (
         <div>
-            <img src='https://files.slack.com/files-pri/T02MD9XTF-F01SZLU3YCX/image.png' alt=''>
-
+            <h1>DINDER</h1>
+            <img src={DinderPic} alt=''>
             </img>
+            <h1>"Dinder is how people agree where to eat. It's like real life, but better."</h1>
         </div>
     )
 }

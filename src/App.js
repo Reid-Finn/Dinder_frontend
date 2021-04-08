@@ -2,29 +2,23 @@ import React from 'react';
 import Header from './Header';
 import DinderCards from './DinderCards';
 import HomePage from './HomePage';
+import Restaurants from './Restaurants';
 import './App.css';
+import axios from "axios";
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
       {/* Header */}
       <Header />
-      <Router>
-        <Route path='/chat'>
-          <h1> Dinder!</h1>
-          <h3>Swipe to find dinner!</h3>
-      {/* Buttons below Dinder Cards */}
-        </Route>
-        <Route path='/'>
-          <HomePage />
-        </Route>
-         {/* Dinder Cards */}
-        <Route path='/swipe'>
-          <DinderCards />
-        </Route>
-      </Router>
+      <Switch>
+        <Route path='/' exact component={HomePage} />
+        <Route path='/swipe' component={DinderCards} />
+      </Switch>
     </div>
+    </Router>
   );
 }
 
