@@ -3,10 +3,10 @@ import queryString from 'query-string';
 
 export function get(path, queryParams) {
     const query = queryString.stringify(queryParams)
-    return fetch(`https://api.yelp.com/v3/businesses/search?term=restaurants&location=Round Rock`, {
+    return fetch(`https://cors-anywhere.herokuapp.comhttps://api.yelp.com/v3/businesses/search?term=restaurants&location=Round Rock`, {
         headers: {
             Authorization: `Bearer ${BEARER_TOKEN}`,
-            Origin: 'localhost',
+            mode: "no-cors",
             withCredentials: true,
 
         }
