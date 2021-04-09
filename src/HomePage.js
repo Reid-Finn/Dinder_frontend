@@ -1,5 +1,6 @@
 import React from 'react';
 import DinderPic from './dinderPic.png';
+import Button from '@material-ui/core/Button';
 
 function HomePage() {
     return (
@@ -8,6 +9,15 @@ function HomePage() {
             <img src={DinderPic} alt=''>
             </img>
             <h1>"Dinder is how people agree where to eat. It's like real life, but better."</h1>
+
+            <Button varient="contained" color="blue" href="/signin">
+                Sign in
+            </Button>
+            
+            
+            <Button varient="contained" color="secondary" href="/register">
+                Create New Account
+            </Button>
         </div>
     )
 }

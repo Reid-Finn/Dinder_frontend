@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react'
 
 function Restaurants() {
-    return (
-        <div>
-            
-        </div>
-    )
+    const getRestaurants = () => {
+        fetch("https://axesso-tripadvisor-data-service.p.rapidapi.com/tpa/tripadvisor-restaurant-details?locationId=2345886", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "c040d6ad58msh0dac702e285eb0bp1190d7jsnd7236d84ebe9",
+		"x-rapidapi-host": "axesso-tripadvisor-data-service.p.rapidapi.com"
+	}
+})
+.then(response => {
+	console.log(response);
+})
+.catch(err => {
+	console.error(err);
+});
+   
+        return (
+            <div>
+                
+            </div>
+        );
+    }
 }
 
-
 export default Restaurants
-
-
-/* API KEY = AIzaSyBSQSU7v8bO6r1LZKWm8mTx-MTixqCGFXE */
-/* https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-30.267153,-97.743057&radius=1500&type=restaurant&key=AIzaSyBSQSU7v8bO6r1LZKWm8mTx-MTixqCGFXE */

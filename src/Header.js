@@ -3,6 +3,7 @@ import './Header.css';
 import HomeIcon from '@material-ui/icons/Home';
 import ChatIcon from '@material-ui/icons/Chat';
 import IconButton from '@material-ui/core/IconButton';
+import PeopleIcon from '@material-ui/icons/People';
 import DinderPic from './dinderPic.png';
 
 
@@ -10,11 +11,13 @@ import DinderPic from './dinderPic.png';
  function Header() {
     return (
         <div className="header">
-            <IconButton>
+            <IconButton href="/">
                 <HomeIcon fontSize='large' />
             </IconButton>
-            <img fontSize='large' className='header_logo' src={DinderPic} alt=''></img>
-            <IconButton>
+            <IconButton href="/switch">
+                <PeopleIcon fontSize='large' />
+            </IconButton>
+            <IconButton href="/chat">
                 <ChatIcon fontSize='large' />
             </IconButton>
         </div>
