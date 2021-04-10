@@ -12,28 +12,25 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 const yelpURL = "https://api.yelp.com/v3/businesses/search?term=restaurants&location=Round Rock"
 
 const App = () => {
-  const [isLoading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
+  // const [isLoading, setLoading] = useState(true);
+  // const [data, setData] = useState([]);
 
-     const [restaurant, setRestaurant] = useState([]);
-     const [fetchParams, setFetchParams] = useState('restaurant', '78665')
+  //    const [restaurant, setRestaurant] = useState([]);
+  //    const [fetchParams, setFetchParams] = useState('restaurant', '78665')
 
-    useEffect(() => {
-    
-        
-        const fetchData = async () => {
-              try{
-                const rawData = await api.get(yelpURL);
-                const resp = await rawData.json();
-                debugger
-                console.log(resp);
-            } catch(e) {
-                console.error(e);
-            }
+  //   useEffect(() => {
+  //       const fetchData = async () => {
+  //           try{
+  //               const rawData = await api.get(yelpURL);
+  //               const resp = await rawData.json();
+  //               console.log(resp);
+  //           } catch(e) {
+  //               console.error(e);
+  //           }
 
-        };
-       
-    });
+  //       };
+  //       fetchData();
+  //   });
 
     return (
       <Router>

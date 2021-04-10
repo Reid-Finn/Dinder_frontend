@@ -4,25 +4,36 @@ import './DinderCards.css';
 import InfoIcon from '@material-ui/icons/Info';
 import ArrowLeft from '@material-ui/icons/ArrowBack';
 import ArrowRight from '@material-ui/icons/ArrowForward';
+import {YELP_BASE_URL, BEARER_TOKEN} from '../hooks/yelp-api/config';
 import * as api from '../hooks/yelp-api/api';
 
 
 
 
+const yelpURL = "https://api.yelp.com/v3/businesses/search?term=restaurants&location=Round Rock"
 
-function DinderCards() {
-    const [restaurant, setRestaurant] = useState([
-        {
-            name: "Applebee's",
-            picture: "https://www.applebees.com/-/media/applebees/campaigns-2/health-and-safety/sanitation-lower-module-desktop.jpg?la=en&hash=87F93C0DB6C15FF647D5C4BE3A8D9F5938E36C9E"
-        },
-
-        {
-            name: "Buffalo Wild Wings",
-            picture: "https://stories.inspirebrands.com/wp-content/uploads/2018/12/Buffalo-Wild-Wings-Restaurant-Exterior.jpg"
-        }
-    ])
-    
+const DinderCards = (props) => {
+    const [isLoading, setLoading] = useState(true);
+    const [data, setData] = useState([]);
+  
+       const [restaurant, setRestaurant] = useState([]);
+       const [fetchParams, setFetchParams] = useState('restaurant', '78665')
+  
+      useEffect(() => {
+          const fetchData = async () => {
+              try{
+                  const rawData = await api.get(yelpURL);
+                  const resp = await rawData.json();
+                 
+                  console.log(resp);
+                  
+              } catch(e) {
+                  console.error(e);
+              }
+  
+          };
+          fetchData();
+      });
    return (
     <div>
     <h1>Swipe Right if you would like to have dinner here. Swipe left if not.</h1>

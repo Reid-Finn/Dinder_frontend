@@ -10,12 +10,12 @@ function HomePage() {
             </img>
             <h1>"Dinder is how people agree where to eat. It's like real life, but better."</h1>
 
-            <Button varient="contained" color="blue" href="/signin">
+            <Button varient="contained" color="primary" href="/signin">
                 Sign in
             </Button>
             
             
-            <Button varient="contained" color="secondary" href="/register">
+            <Button varient="contained" color="secondary" href="/new">
                 Create New Account
             </Button>
         </div>
