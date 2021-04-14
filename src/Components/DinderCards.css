@@ -7,7 +7,7 @@
     border-radius: 20px;
     background-size: cover;
     background-position: center;
-    box-shadow: 0px 18px 53px 0px rgba(0, 0, 0.3);
+    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0.3);
 }
 
 .card > h3{
@@ -18,7 +18,7 @@
 
 .dinderCards_cardContainer {
     display: flex;
-    justify-content: center;
+    justify-content: absolute;
     margin-top: 5vh;
 }
 

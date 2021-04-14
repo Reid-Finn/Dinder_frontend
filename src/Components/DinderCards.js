@@ -4,52 +4,42 @@ import './DinderCards.css';
 import InfoIcon from '@material-ui/icons/Info';
 import ArrowLeft from '@material-ui/icons/ArrowBack';
 import ArrowRight from '@material-ui/icons/ArrowForward';
-import {YELP_BASE_URL, BEARER_TOKEN} from '../hooks/yelp-api/config';
+import {YELP_BASE_URL, BEARER_TOKEN} from '../actions/config';
 import * as api from '../hooks/yelp-api/api';
+import  getRestaurants from '../actions/index';
+import { connect, useSelector, useDispatch } from 'react-redux';
 
 
 
 
-const yelpURL = "https://api.yelp.com/v3/businesses/search?term=restaurants&location=Round Rock"
+const yelpURL = "https://api.yelp.com/v3/businesses/search?term=restaurants&location=Canandaigua"
 
-const DinderCards = (props) => {
-    const [isLoading, setLoading] = useState(true);
-    const [data, setData] = useState([]);
-  
-       const [restaurant, setRestaurant] = useState([]);
-       const [fetchParams, setFetchParams] = useState('restaurant', '78665')
-  
-      useEffect(() => {
-          const fetchData = async () => {
-              try{
-                  const rawData = await api.get(yelpURL);
-                  const resp = await rawData.json();
-                 
-                  console.log(resp);
-                  
-              } catch(e) {
-                  console.error(e);
-              }
-  
-          };
-          fetchData();
-      });
+
+// const [restaurants, setRestaurants] = useState([])
+
+const DinderCards = () => {
+    const dispatch = useDispatch();
+    const restaurants = useSelector(state => state.Restaurants);
+    const [user, setUser] = useState([])
+     
+     useEffect(() => {dispatch(getRestaurants());}, [user])
    return (
     <div>
-    <h1>Swipe Right if you would like to have dinner here. Swipe left if not.</h1>
+    
     <div className="DinderCards_cardContainer">
-        {restaurant.map(restaurant => (
+        {restaurants.map(restaurant => (
             <TinderCard
                 className="swipe"
                 key={restaurant.name}
                 preventSwipe={['up', 'down']}>
                 <div 
-                style={{ backgroundImage: `url(${restaurant.picture})`}}
+                style={{ backgroundImage: `url(${restaurant.image_url})`}}
                 className="card">
                 <h3>{restaurant.name}</h3>
                 </div>
             </TinderCard>
     ))}
+
     </div>
     <ArrowLeft />
     <InfoIcon />
@@ -57,6 +47,12 @@ const DinderCards = (props) => {
 </div>
 
    );
+}
+    
+const mapStateToProps = state => {
+    return{ 
+        restaurants: state.Restaurants
     }
+}
 
-export default DinderCards
+export default connect(mapStateToProps, {getRestaurants})(DinderCards);
