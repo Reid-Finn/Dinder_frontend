@@ -15,7 +15,7 @@ function HomePage() {
             </Button>
             
             
-            <Button varient="contained" color="secondary" href="/new">
+            <Button varient="contained" color="secondary" href="/register">
                 Create New Account
             </Button>
         </div>

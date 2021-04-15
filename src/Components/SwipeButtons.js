@@ -1,11 +1,24 @@
-import React from 'react'
+import React from 'react';
+import './SwipeButtons.css';
+import CloseIcon from "@material-ui/icons/Close";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import InfoIcon from '@material-ui/icons/Info';
+import IconButton from '@material-ui/core/IconButton';
 
-function SwipeButtons() {
+const SwipeButtons = () => {
     return (
-        <div>
-            <h1>Testing Buttons yo!</h1>
+        <div className="swipeButtons">
+            <IconButton className="swipebutton_left">
+                <CloseIcon fontSize="large" />
+            </IconButton>
+            
+            <IconButton className="swipebutton_right">
+                <FavoriteIcon fontSize="large" />
+            </IconButton>
+            
+            
         </div>
     )
 }
 
-export default SwipeButtons;
+export default SwipeButtons

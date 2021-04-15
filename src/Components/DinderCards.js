@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import TinderCard from 'react-tinder-card';
 import './DinderCards.css';
-import InfoIcon from '@material-ui/icons/Info';
-import ArrowLeft from '@material-ui/icons/ArrowBack';
-import ArrowRight from '@material-ui/icons/ArrowForward';
-import {YELP_BASE_URL, BEARER_TOKEN} from '../actions/config';
-import * as api from '../hooks/yelp-api/api';
-import  getRestaurants from '../actions/index';
+import Popover from '@material-ui/core/Popover';
+import  getRestaurants from '../actions/getRestaurants';
 import { connect, useSelector, useDispatch } from 'react-redux';
+import InfoIcon from '@material-ui/icons/Info';
+import IconButton from '@material-ui/core/IconButton';
 
 
 
 
-const yelpURL = "https://api.yelp.com/v3/businesses/search?term=restaurants&location=Canandaigua"
-
-
-// const [restaurants, setRestaurants] = useState([])
+function clickInfo() {
+ 
+}
 
 const DinderCards = () => {
     const dispatch = useDispatch();
@@ -36,14 +33,15 @@ const DinderCards = () => {
                 style={{ backgroundImage: `url(${restaurant.image_url})`}}
                 className="card">
                 <h3>{restaurant.name}</h3>
+                <h2><IconButton onClick={clickInfo} className="button_info">
+                <InfoIcon fontSize="large" />
+                </IconButton></h2>
                 </div>
             </TinderCard>
     ))}
 
     </div>
-    <ArrowLeft />
-    <InfoIcon />
-    <ArrowRight />
+    
 </div>
 
    );

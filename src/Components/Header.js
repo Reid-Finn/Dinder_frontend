@@ -1,10 +1,9 @@
 import React from 'react'
 import './Header.css';
 import HomeIcon from '@material-ui/icons/Home';
-import ChatIcon from '@material-ui/icons/Chat';
 import IconButton from '@material-ui/core/IconButton';
 import PeopleIcon from '@material-ui/icons/People';
-import DinderPic from './dinderPic.png';
+import TouchAppIcon from '@material-ui/icons/TouchApp';
 
 
 
@@ -17,8 +16,8 @@ import DinderPic from './dinderPic.png';
             <IconButton href="/switch">
                 <PeopleIcon fontSize='large' />
             </IconButton>
-            <IconButton href="/chat">
-                <ChatIcon fontSize='large' />
+            <IconButton href="/swipe">
+                <TouchAppIcon fontSize='large' />
             </IconButton>
         </div>
     )

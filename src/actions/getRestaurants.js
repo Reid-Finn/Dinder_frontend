@@ -7,7 +7,7 @@ const yelpURL = "https://api.yelp.com/v3/businesses/search?term=restaurants&loca
     // const query = queryString.stringify(queryParams)
     return dispatch => {
         debugger;
-        fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=restaurants&location=Canandaigua`, {
+        fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=restaurants&location=Greece`, {
         headers: {
             Authorization: `Bearer ${BEARER_TOKEN}`,
             Origin: 'localhost',
