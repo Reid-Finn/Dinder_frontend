@@ -9,10 +9,10 @@ import { Redirect } from 'react-router-dom';
    const[password, setPassword] = useState('');
    const[redirect, setRedirect] = useState(false);
 
-   const submit = async(e: SyntheticEvent) => {
+   const submit = async(e) => {
      e.preventDefault();
      
-     await fetch('http://127.0.0.1:3001/users', {
+      await fetch('http://127.0.0.1:3001/users', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -23,6 +23,7 @@ import { Redirect } from 'react-router-dom';
           password
         })
      });
+     
 
      setRedirect(true)
   }

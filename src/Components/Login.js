@@ -1,18 +1,35 @@
 import React, {SyntheticEvent, useState} from 'react';
 import {Redirect} from "react-router-dom";
+import  getUser from '../actions/getUser';
+import { connect, useSelector, useDispatch } from 'react-redux';
 
-const Login = () => {
-  
+
+
+
+
+
+
+const Login = () =>{
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+        debugger;
+        {dispatch(getUser(e))}
+    }
+    
+    
+    const dispatch = useDispatch();
+    const user = useSelector(state => state);
     return (
 
-                <form onSubmit={()}>
+                <form onSubmit={handleSubmit}>
                   <h1>Log In</h1>
                   
                     <label>Username</label>
-                    <input onChange={handleChange} type="text" value={user.username} placeholder="username" name="username"/>
+                    <input  type="text"  placeholder="username" name="username"/>
                  
                     <label>Password</label>
-                    <input onChange={handleChange} type="password"value={user.password} placeholder="password" name="password"/>
+                    <input  type="password" placeholder="password" name="password"/>
     
                   <button type="submit">Login</button>
                 </form>   
