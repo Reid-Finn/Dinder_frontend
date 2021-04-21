@@ -9,11 +9,12 @@ import { Provider } from 'react-redux';
 import restaurantReducer from './reducers/restaurantReducer';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import logger from 'redux-logger'
+import logger from 'redux-logger';
+import rootReducer from './reducers/rootReducer';
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(restaurantReducer, composeWithDevTools(applyMiddleware(logger, thunk)))
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(logger, thunk)))
 
 
 

@@ -26,7 +26,6 @@ const App = () => {
               <DinderCards />
               <SwipeButtons />
             </Route>
-            <Route path='/switch' component={SwitchPerson} />
             <Route path='/signin' component={Login} />
             <Route path='/register' component={Register} />
           </Switch>

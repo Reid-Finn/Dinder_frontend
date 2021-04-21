@@ -13,6 +13,7 @@ const SwipeButtons = () => {
             </IconButton>
             
             <IconButton className="swipebutton_right">
+            {/* swipe={['right']} */}
                 <FavoriteIcon fontSize="large" />
             </IconButton>
             

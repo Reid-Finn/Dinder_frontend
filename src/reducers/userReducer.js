@@ -7,14 +7,18 @@ const initState = {
 }
 
 
-const userReducer = (state = initState, action) => {
+function userReducer(state = [], action)  {
     switch(action.type) {
         case "SET_USER":
                 return{
                     ...state,
-                    User: action
+                    User: action,
+                    currentuser: "Person1"
+                    
 
                 }
+
+
             default:
                 return state
                 

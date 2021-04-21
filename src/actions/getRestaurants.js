@@ -4,7 +4,6 @@ import { connect, useSelector } from 'react-redux';
 const yelpURL = "https://api.yelp.com/v3/businesses/search?term=restaurants&location=Round Rock"
 
  function getRestaurants() {
-    // const query = queryString.stringify(queryParams)
     return dispatch => {
         fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=restaurants&location=Greece`, {
         headers: {
