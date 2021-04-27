@@ -16,7 +16,21 @@ function userReducer(state = [], action)  {
                     currentuser: "Person1"
                     
 
-                }
+                };
+
+        case "SWITCH_USER_TO_TWO":
+            return{
+                ...state,
+                currentuser: "Person2"
+
+            };
+        
+        case "SWITCH_USER_TO_ONE":
+            return{
+                ...state,
+                currentuser: "Person1"
+
+            }
 
 
             default:

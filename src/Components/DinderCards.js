@@ -3,6 +3,7 @@ import TinderCard from 'react-tinder-card';
 import './DinderCards.css';
 import Popover from '@material-ui/core/Popover';
 import  getRestaurants from '../actions/getRestaurants';
+import SwitchUser from './SwitchPerson';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import InfoIcon from '@material-ui/icons/Info';
 import IconButton from '@material-ui/core/IconButton';
@@ -16,17 +17,29 @@ const DinderCards = () => {
     const restaurants = useSelector(state => state.restaurants.Restaurants);
     const user = useSelector(state => state.user.User.data);
     const currentuser = useSelector(state => state.user.currentuser)
+    //const [currentuser, setCurrentUser] = useState(useSelector(state => state.user.currentuser))
+    const switchUser = () => {
+        console.log("clicked")
+        if (currentuser === "Person1") {
+            dispatch({type: "SWITCH_USER_TO_TWO"});
+            //setCurrentUser("Person2")
+        }
+        else {
+            dispatch({type: "SWITCH_USER_TO_ONE"})
+        }
+    }
 
-   
+    
     const save = (direction, restaurantName) =>  {
         console.log(`saving ${restaurantName} to  restaurant list`);
-        console.log('hi')
+        console.log(user)
         console.log(direction);
         console.log(restaurantName);
         if(direction === "right") {
+            debugger
             if (currentuser === "Person1"){
                
-               user.person1restaurants.push(restaurantName)
+              user.person1restaurants.push(restaurantName)
    
                 fetch(`http://127.0.0.1:3001/users/${user.id}`, {
                     method: 'PATCH',
@@ -37,7 +50,9 @@ const DinderCards = () => {
             });
         }
             else {
-                fetch(`http://127.0.0.1:3001/users${user.id}`, {
+                debugger
+                user.person2restaurants.push(restaurantName)
+                fetch(`http://127.0.0.1:3001/users/${user.id}`, {
                     method: 'PATCH',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({
@@ -49,11 +64,11 @@ const DinderCards = () => {
     }
     
 
-     useEffect(() => {dispatch(getRestaurants());}, [])
+     useEffect(() => {dispatch(getRestaurants());}, [currentuser])
    return (
     <div>
-        <button className="Toggleuser">Toggle User</button>
-        <h2>Welcome, {user.person1name}! Lets find dinner tonight!</h2>
+        <button className="Toggleuser" onClick={switchUser}>Toggle User</button>
+        <h2>Welcome, {currentuser}! Lets find dinner tonight!</h2>
     <div className="DinderCards_cardContainer">
         {restaurants.map(restaurant => (
             <TinderCard

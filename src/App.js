@@ -28,6 +28,7 @@ const App = () => {
             </Route>
             <Route path='/signin' component={Login} />
             <Route path='/register' component={Register} />
+            <Route path='/switch' component={SwitchPerson} />
           </Switch>
       </div>
       </Router>
